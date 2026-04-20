@@ -33,6 +33,12 @@ func main() {
 	case "completion":
 		handleCompletion(args[1:])
 		return
+	case "init":
+		handleInit()
+		return
+	case "add":
+		handleAdd(args[1:])
+		return
 	}
 
 	// Everything else: pass through to RUNME.sh
@@ -61,6 +67,8 @@ func printHelp() {
 Usage:
   rme [command]          Run a RUNME.sh command
   rme                    Show RUNME.sh usage
+  rme init               Download RUNME.sh into current directory
+  rme add <name> <desc>  Add a command to RUNME.sh
   rme completion <shell> Print completion script (fish, bash, zsh)
   rme completion install Auto-install shell completions
 
